@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <?php include('header.php'); ?>
+  <?php include('header.inc'); ?>
 
   <main class="container" role="main">
     <section>
@@ -37,6 +37,6 @@
     </section>
   </main>
 
-  <?php include('footer.php'); ?>
+  <?php include('footer.inc'); ?>
 </body>
 </html>
