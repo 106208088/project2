@@ -1,0 +1,462 @@
+/* styles.css
+   Description: Styling for project2 pages
+*/
+
+/* ==== Global ==== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: linear-gradient(135deg, #e0f2ff, #ffffff);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==== Header ==== */
+.site-header {
+  background: linear-gradient(90deg, #004b8d, #0078d4);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .logo img {
+  display: block;
+  height: 60px;
+  width: auto;
+}
+
+.site-header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  margin: 0.3rem 0;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: #e0f2ff;
+}
+
+/* ==== Navigation ==== */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+/* ==== Page structure ==== */
+.container {
+  flex: 1;
+  width: 90%;
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  background: #ffffffcc;
+  backdrop-filter: blur(3px);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1, h4 {
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+h2, h3 {
+  color:#005fa3;
+  margin-bottom: 0.6rem;
+}
+
+p, ul, ol {
+  margin-bottom: 1rem;
+}
+
+/* ==== Home page ==== */
+figure img {
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+figure figcaption {
+  text-align: center
+}
+
+.container figure {
+  float: right;
+}
+
+/* ==== Aside ==== */
+aside {
+  float: right;
+  width: 25%;
+  background: #f8fbff;
+  border: 2px solid #0078d4;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 700px) {
+  aside { float: none; width: 100%; margin: 1rem 0; }
+}
+
+/* ==== Job Description ====*/
+.container h2 {
+  color: rgb(88, 255, 79)
+}
+
+/* ==== Apply form ==== */
+.apply-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+
+.apply-form label {
+  font-weight: 600;
+  color: #86c6ff;
+}
+
+.apply-form input,
+.apply-form select,
+.apply-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 100%;
+  background: #f9fafb;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.apply-form input:focus,
+.apply-form select:focus,
+.apply-form textarea:focus {
+  border-color: #0078d4;
+  box-shadow: 0 0 0 3px rgba(0,120,212,0.2);
+  outline: none;
+}
+
+.apply-form fieldset {
+  grid-column: 1 / -1;
+  border: 2px solid #0078d4;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background: #f0f8ff;
+}
+
+.apply-form button {
+  grid-column: 2 / 3;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: #0078d4;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.apply-form button:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
+}
+
+/* Responsive reflow for smaller screens */
+@media (max-width: 800px) {
+  .apply-form { grid-template-columns: 1fr; }
+  .apply-form button { grid-column: 1 / -1; }
+}
+
+/* ==== About page ==== */
+
+.group-photo {
+  flex: 1 1 35%; 
+  text-align: center;
+}
+
+.group-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid #60a5fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.group-photo figcaption {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+
+.list dt {
+  color: #0095ff;
+  font-weight: 500;
+}
+
+.members-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.members-table caption {
+  font-weight: 700;
+  color: #85c6ff;
+  margin-bottom: 0.5rem;
+}
+
+.members-table th, .members-table td {
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 0.8rem;
+}
+
+.members-table thead {
+  background: #0078d4;
+  color: white;
+}
+
+.members-table tbody tr:hover {
+  background: #0095ff;
+}
+
+
+/* ==== Footer ==== */
+.site-footer {
+  background: #004b8d;
+  color: white;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: #f0faff;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: #ffd54f;
+}
+
+/* ==== Privacy page ==== */
+body.privacy {
+  background: linear-gradient(135deg, #ffffff, #e6f4ff);
+}
+
+/* ==== Ultility & Accessibitlity ==== */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+.note {
+  color: #334155;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* ==== Manage ==== */
+
+
+#manage-forms form {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#manage-forms label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#manage-forms button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Style for the EOI data table */
+.eoi-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.eoi-table th, .eoi-table td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.eoi-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  color: #333;
+}
+.eoi-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.status-New { color: #f59e0b; font-weight: bold; } 
+.status-Current { color: #10b981; font-weight: bold; } 
+.status-Final { color: #ef4444; font-weight: bold; } 
+
+/* ==== Enhacements ==== */
+.list dt {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #004b8d; 
+}
+
+.list dd {
+  margin-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #eee;
+}
+
+/*==== Process EOI ====*/
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Success Message */
+h2:contains("Successful") {
+    color: #10b981; 
+    border-bottom: 2px solid #10b981;
+    padding-bottom: 5px;
+}
+
+/* Error Message */
+h2:contains("Failed") {
+    color: #ef4444; 
+    border-bottom: 2px solid #ef4444;
+    padding-bottom: 5px;
+}
+
+/* Styling for the unique EOI number */
+h3 strong {
+    color: #0078d4; 
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    background-color: #e6f4ff;
+    border-radius: 4px;
+}
+
+/* ==== Default/Light theme ==== */
+body {
+  background: linear-gradient(135deg, #e0f2ff, #ffffff);
+  color: #1f2937;
+}
+
+/* ==== Dark theme ==== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    color: #e5e7eb;
+  }
+
+  .site-header {
+    background: linear-gradient(90deg, #0f172a, #1e3a8a);
+    box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+  }
+
+  .container {
+    background: #1e293b;
+    color: #f1f5f9;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+  }
+
+  h1, h2, h3, h4 {
+    color: #60a5fa;
+  }
+
+  a {
+    color: #93c5fd;
+  }
+
+  a:hover {
+    color: #facc15;
+  }
+
+  .main-nav a:hover {
+    background: rgba(255,255,255,0.15);
+  }
+
+  aside {
+    background: #334155;
+    border-color: #60a5fa;
+  }
+
+  .site-footer {
+    background: #0f172a;
+    color: #cbd5e1;
+  }
+
+  .apply-form input,
+  .apply-form select,
+  .apply-form textarea {
+    background: #1f2937;
+    border: 1px solid #475569;
+    color: #e2e8f0;
+  }
+
+  .apply-form fieldset {
+    background: #273449;
+    border-color: #60a5fa;
+  }
+}
