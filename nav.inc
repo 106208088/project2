@@ -1,7 +1,4 @@
 <?php
-// nav.inc: Contains the main navigation menu structure
-
-// Get the current page filename to apply the 'active' class
 $currentPage = basename($_SERVER['PHP_SELF']); 
 ?>
 <nav class="main-nav" role="navigation" aria-label="Main menu">
