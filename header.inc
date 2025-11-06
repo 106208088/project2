@@ -1,7 +1,5 @@
 <?php
-
 $currentPage = basename($_SERVER['PHP_SELF']);
-
 if (!isset($pageTitle)) { $pageTitle = "SWC IT - Careers"; } 
 ?>
 <!Doctype html>
