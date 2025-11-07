@@ -20,13 +20,13 @@
 
       <h3>Members & Student IDs</h3>
       <ul class="nested">
-        <li>John Smith - Student ID: 123456789</li>
-        <li>Jane Doe - Student ID: 987654321</li>
-        <li>Alex Lee - Student ID: 112233445</li>
+        <li>John Smith - Student ID: SWH03431</li>
+        <li>Jane Doe - Student ID: SWH</li>
+        <li>Alex Lee - Student ID: SWH</li>
       </ul>
 
       <h3>Tutor</h3>
-      <p>Tutor: Mr. Michael Brown</p>
+      <p>Tutor: Mr. Binh Vu Ngoc</p>
 
       <h3>Member contributions</h3>
       <dl class="list"> 
@@ -39,7 +39,7 @@
       </dl>
 
       <figure class="group-photo">
-        <img src="images/group.jpg" alt="Group photo" width="300">
+        <img src="images/group_photo.jpg" alt="Group photo" width="300">
         <figcaption>Our team - SWC IT</figcaption>
       </figure>
     </section>
