@@ -1,6 +1,4 @@
 <?php
-// index.php
-// SWC IT Careers Page
 ?>
 <!DOCTYPE html>
 <html lang="en">
