@@ -14,6 +14,13 @@
   <?php include('header.inc'); ?>
 
   <main class="container">
+
+    <section>
+      <figure class="group-photo">
+        <img src="images/group_photo.jpg" alt="Group photo" width="300">
+        <figcaption>Our team - SWC IT</figcaption>
+      </figure>
+    </section>
     <section>
       <h2>Group Details</h2>
       <p>Class time: Friday 14:00 - 17:00</p>
@@ -37,11 +44,6 @@
         <dt>- Alex Lee</dt>
         <dd>index.php images, deployment, styles.css</dd>
       </dl>
-
-      <figure class="group-photo">
-        <img src="images/group_photo.jpg" alt="Group photo" width="300">
-        <figcaption>Our team - SWC IT</figcaption>`
-      </figure>
     </section>
 
     <section>
