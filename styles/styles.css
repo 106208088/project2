@@ -136,7 +136,7 @@ aside {
   ontainer figure {
     float: none;
     max-width: 100%;
-    margin: 15px auto; /* Center the block */
+    margin: 15px auto; 
   }
 }
 
