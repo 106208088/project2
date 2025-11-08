@@ -1,6 +1,4 @@
 <?php
-// jobs.php
-// SWC IT - Position Descriptions Page
 ?>
 <!DOCTYPE html>
 <html lang="en">
