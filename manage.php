@@ -4,25 +4,25 @@ include_once 'header.inc';
 include_once 'settings.php';
 ?>
     <h2>HR Manager Portal</h2>
-    <p>This page provides access to Expressions of Interest (EOI) data from applicants. **(Requires MySQL implementation for Task A.5)**</p>
+    <p>This page provides access to Expressions of Interest (EOI) data from applicants.</p>
 
     <section>
         <h3>Search & Display Expressions of Interest</h3>
         <form action="manage.php" method="GET">
-            <label for="search_ref">Search by Job Reference Number (A.5.2):</label>
+            <label for="search_ref">Search by Job Reference Number:</label>
             <input type="text" id="search_ref" name="job_ref" maxlength="5">
             <button type="submit">Search by Ref</button>
         </form>
 
         <form action="manage.php" method="GET">
-            <label for="search_name">Search by Applicant Name (First or Last) (A.5.3):</label>
+            <label for="search_name">Search by Applicant Name (First or Last):</label>
             <input type="text" id="search_name" name="applicant_name" maxlength="40">
             <button type="submit">Search by Name</button>
         </form>
 
         <form action="manage.php" method="GET">
              <input type="hidden" name="action" value="list_all">
-             <button type="submit">List All EOIs (A.5.1)</button>
+             <button type="submit">List All EOIs</button>
         </form>
 
         </section>
@@ -30,7 +30,7 @@ include_once 'settings.php';
     <hr>
 
     <section>
-        <h3>Delete EOI Records (A.5.4)</h3>
+        <h3>Delete EOI Records</h3>
         <p>This action will permanently **delete all** Expressions of Interest for the specified job reference number.</p>
         <form action="manage.php" method="POST">
             <label for="delete_ref">Job Reference to Delete ALL records:</label>
@@ -42,7 +42,7 @@ include_once 'settings.php';
     <hr>
 
     <section>
-        <h3>Update EOI Status (A.5.5)</h3>
+        <h3>Update EOI Status</h3>
         <p>Change the status of a specific Expression of Interest (e.g., New, Current, Final).</p>
         <form action="manage.php" method="POST">
             <label for="eoi_num">EOI Number to Update:</label>
