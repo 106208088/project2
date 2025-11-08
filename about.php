@@ -40,7 +40,7 @@
 
       <figure class="group-photo">
         <img src="images/group_photo.jpg" alt="Group photo" width="300">
-        <figcaption>Our team - SWC IT</figcaption>
+        <figcaption>Our team - SWC IT</figcaption>`
       </figure>
     </section>
 
