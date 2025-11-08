@@ -1,6 +1,4 @@
 <?php
-// about.php
-// SWC IT - Group Page
 ?>
 <!DOCTYPE html>
 <html lang="en">
