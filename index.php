@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "SWC IT - Home Page";
+include_once 'header.inc';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +12,7 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <?php include('header.inc'); ?>
-
+ 
   <main class="container" role="main">
     <section>
       <h2>Welcome — Network Administrator Careers</h2>
