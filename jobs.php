@@ -95,3 +95,36 @@
   <?php include('footer.inc'); ?>
 </body>
 </html>
+
+<?php
+require_once("settings.php");
+$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+
+if ($conn) {
+  $query = "SELECT * FROM jobs";
+  $result = mysqli_query($conn, $query);
+}
+include('header.inc');
+include('nav.inc');
+?>
+
+<h2>Available Jobs</h2>
+<div class="jobs-container">
+<?php
+if ($result) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo "<div class='job'>
+            <h3>{$row['title']} ({$row['job_ref']})</h3>
+            <p>{$row['description']}</p>
+            <p><strong>Salary:</strong> {$row['salary']}</p>
+            <p><strong>Closing Date:</strong> {$row['closing_date']}</p>
+            <a href='apply.php?job_ref={$row['job_ref']}'>Apply Now</a>
+          </div>";
+  }
+}
+mysqli_close($conn);
+?>
+</div>
+
+<?php include('footer.inc'); ?>
+
