@@ -1,4 +1,4 @@
-<?php include('header.inc'); include('nav.inc'); ?>
+<?php include('header.inc');?>
 
 <h2>Apply for a Job</h2>
 
