@@ -1,24 +1,18 @@
 <?php
 session_start();
 if (!isset($_SESSION['manager_logged_in']) || $_SESSION['manager_logged_in'] !== true) {
-    header("Location:login.php");
+    header("Location:logout.php");
     exit();
-}
-$pageTitle = "SWC IT - HR Manager Interface";
-include_once 'header.inc';
-include_once 'settings.php'; 
-?>
-    <h2>HR Manager Portal</h2>
-    <p>Welcome, <?php echo htmlspecialchars($_SESSION['manager_user']); ?>. You are logged in.</p>
     
-    <form action="logout.php" method="post" style="text-align: right;">
-        <button type="submit" style="background-color: #ef4444;">Log Out</button>
-    </form>
-<?php
+}
 $pageTitle = "SWC IT - HR Manager Interface";
 include_once 'header.inc';
 include_once 'settings.php';
 ?>
+    <p>Welcome, <?php echo htmlspecialchars($_SESSION['manager_user']); ?>. You are logged in.</p>
+    <form action="logout.php" method="post" style="text-align: right; margin-bottom: 20px;">
+        <button type="submit" style="background-color: #ef4444; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Log Out</button>
+    </form>
     <h2>HR Manager Portal</h2>
     <p>This page provides access to Expressions of Interest (EOI) data from applicants.</p>
 

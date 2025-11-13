@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_SESSION['manager_logged_in']) && $_SESSION['manager_logged_in'] === true) {
     header("Location:manage.php");
     exit();
@@ -16,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_username = isset($_POST['username']) ? trim($_POST['username']) : '';
     $input_password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    $conn = @new mysqli($host, $user, $password, $database);
+    $conn = @new mysqli($host, $user, $pwd, $sql_db);
 
     if ($conn->connect_error) {
         $login_error = "Database connection failed. Cannot verify credentials.";
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 $_SESSION['manager_logged_in'] = true;
                 $_SESSION['manager_user'] = $input_username;
-                header("Location: manage.php");
+                header("Location:manage.php");
                 exit();
             } else {
           
@@ -62,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p style="color: red; font-weight: bold;"><?php echo $login_error; ?></p>
     <?php endif; ?>
 
-    <form action="manager_login.php" method="post" class="apply-form">
+    <form action="login.php" method="post" class="apply-form">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
 
