@@ -18,7 +18,7 @@ include_once 'header.inc';
 
     <section id="pos-NA">
       <h2>Position: Network Administrator</h2>
-      <p><span class="job-ref">NA12B</span></p>
+      <p><strong>Ref:</strong> <span class="job-ref">NA12B</span></p>
       <p><strong>Brief description:</strong> The Network Administrator manages corporate LAN/WAN, ensures uptime,
         configures enterprise switches/routers, performs monitoring, and implements security controls.
       </p>
