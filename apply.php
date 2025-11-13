@@ -2,7 +2,7 @@
 $pageTitle = "SWC IT - Apply";
 include_once 'header.inc';
 ?>
-    <h1>Apply for a Position</h1>
+    <h2>Apply for a Position</h2>
 
     <form action="process_eoi.php" method="post" class="apply-form" novalidate>
       <label for="jobref">Job reference number</label>
