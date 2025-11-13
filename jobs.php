@@ -1,24 +1,29 @@
 <?php
-$pageTitle = "SWC IT - Position Description";
+$pageTitle = "SWC IT - Position Descriptions";
 include_once 'header.inc';
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SWC IT - Position Descriptions</title>
-  <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
- 
+include_once 'settings.php';
+$conn = @new mysqli($host, $user, $pwd, $sql_db);
+if ($conn->connect_error) {
+    echo "<h2>Error</h2><p>Could not load job descriptions. Database connection failed.</p>";
+} else {
+    $sql = "SELECT * FROM jobs";
+    $result = $conn->query($sql);
 
+    if ($result && $result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+        }
+    } else {
+        echo '<p>No current job positions available.</p>';
+    }
+    $conn->close();
+}
+?>
   <main class="container">
     <h2>Position Descriptions</h2>
 
     <section id="pos-NA">
       <h2>Position: Network Administrator</h2>
-      <p><strong>Ref:</strong> <span class="job-ref">NA12B</span></p>
+      <p><strong>Ref:</strong><span class="job-ref">NA12B</span></p>
       <p><strong>Brief description:</strong> The Network Administrator manages corporate LAN/WAN, ensures uptime,
         configures enterprise switches/routers, performs monitoring, and implements security controls.
       </p>
@@ -36,7 +41,7 @@ include_once 'header.inc';
       </ol>
 
       <h3>Required qualifications, skills and knowledge</h3>
-      <h4>Essential</h4>
+      <h3>Essential</h3>
       <ul>
         <li>Bachelor's degree in IT or equivalent experience.</li>
         <li>3+ years in network administration (Cisco/Juniper experience preferred).</li>
@@ -44,7 +49,7 @@ include_once 'header.inc';
         <li>CCNA or equivalent certification.</li>
       </ul>
 
-      <h4>Preferable</h4>
+      <h3>Preferable</h3>
       <ul>
         <li>Experience with automation (Ansible) and scripting (Python, Bash).</li>
         <li>Experience in cloud networking (AWS VPC / Azure VNets).</li>
@@ -82,10 +87,11 @@ include_once 'header.inc';
         <li>Familiarity with ITIL foundations and ticketing systems (Jira Service Management preferred).</li>
       </ul>
 
-      <h4>Preferable</h4>
+      <h3>Preferable</h3>
       <ul>
         <li>Experience with service automation and reporting (Power BI/Excel).</li>
       </ul>
+
     </section>
 
     <footer class="page-footer">
@@ -94,39 +100,6 @@ include_once 'header.inc';
     </footer>
   </main>
 
-  <?php include('footer.inc'); ?>
-</body>
-</html>
-
 <?php
-require_once("settings.php");
-$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
-
-if ($conn) {
-  $query = "SELECT * FROM jobs";
-  $result = mysqli_query($conn, $query);
-}
-include('header.inc');
-include('nav.inc');
+include_once 'footer.inc';
 ?>
-
-<h2>Available Jobs</h2>
-<div class="jobs-container">
-<?php
-if ($result) {
-  while ($row = mysqli_fetch_assoc($result)) {
-    echo "<div class='job'>
-            <h3>{$row['title']} ({$row['job_ref']})</h3>
-            <p>{$row['description']}</p>
-            <p><strong>Salary:</strong> {$row['salary']}</p>
-            <p><strong>Closing Date:</strong> {$row['closing_date']}</p>
-            <a href='apply.php?job_ref={$row['job_ref']}'>Apply Now</a>
-          </div>";
-  }
-}
-mysqli_close($conn);
-?>
-</div>
-
-<?php include('footer.inc'); ?>
-
