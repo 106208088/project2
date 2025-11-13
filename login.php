@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->connect_error) {
         $login_error = "Database connection failed. Cannot verify credentials.";
     } else {
-        // Prepare statement to prevent SQL injection
+    
         $stmt = $conn->prepare("SELECT password_hash FROM managers WHERE username = ?");
         $stmt->bind_param("s", $input_username);
         $stmt->execute();
@@ -31,19 +31,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             $stored_hash = $row['password_hash'];
 
-            // Verify the submitted password against the stored hash
+           
             if (password_verify($input_password, $stored_hash)) {
-                // Success: Start session variables and redirect
+                
                 $_SESSION['manager_logged_in'] = true;
                 $_SESSION['manager_user'] = $input_username;
                 header("Location: manage.php");
                 exit();
             } else {
-                // Failure: Incorrect password
+          
                 $login_error = "Invalid username or password.";
             }
         } else {
-            // Failure: User not found
+         
             $login_error = "Invalid username or password.";
         }
 
