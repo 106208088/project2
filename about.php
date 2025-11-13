@@ -12,7 +12,6 @@ include_once 'header.inc';
 </head>
 <body>
  
-
   <main class="container">
 
     <section>
