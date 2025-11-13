@@ -1,4 +1,6 @@
 <?php
+$pageTitle = "SWC IT - About";
+include_once 'header.inc';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +11,7 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <?php include('header.inc'); ?>
+ 
 
   <main class="container">
 
