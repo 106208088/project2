@@ -27,15 +27,17 @@ body {
   background: linear-gradient(90deg, #004b8d, #0078d4);
   color: white;
   padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
+  display: flex; 
+  align-items: center; 
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   position: sticky;
   top: 0;
   z-index: 10;
 }
+
+
 
 .site-header .logo img {
   display: block;
@@ -55,11 +57,16 @@ body {
 }
 
 /* ==== Navigation ==== */
+
 .main-nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.main-nav {
+  overflow-x: auto; 
+  padding-bottom: 5px; 
 }
 
 .main-nav a {

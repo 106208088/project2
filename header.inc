@@ -16,8 +16,8 @@ if (!isset($pageTitle)) { $pageTitle = "SWC IT - Careers"; }
     <div class="logo">
       <img src="images/Vm1Xdy5qcGc.png" alt="SWC IT Company Logo" width="150" height="60">
     </div>
-    <h1>SWC IT</h1>
-    <p class="tagline">Reliable infrastructure. Secure networks. Smart solutions.</p>
+    <h1>SWC IT // Reliable infrastructure. Secure networks. Smart solutions.</h1>
+
 
     <?php include_once 'nav.inc'; ?>
 
