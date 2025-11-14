@@ -6,7 +6,6 @@ if (!$conn) {
   die("Database connection failed");
 }
 
-// Sanitize & validate
 $job_ref = trim($_POST['job_ref']);
 $first = trim($_POST['first_name']);
 $last = trim($_POST['last_name']);
