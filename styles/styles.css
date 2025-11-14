@@ -308,7 +308,7 @@ textarea:focus {
 /* ==== Manage ==== */
 
 
-.manage-forms form {
+#manage-forms form {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -317,12 +317,12 @@ textarea:focus {
 }
 
 
-.manage-forms label {
+#manage-forms label {
   font-weight: 600;
   white-space: nowrap;
 }
 
-.manage-forms button {
+#manage-forms button {
   grid-column: 2 / 3;
   padding: 0.75rem 1.5rem;
   border: none;
