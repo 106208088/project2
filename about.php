@@ -26,9 +26,9 @@ include_once 'header.inc';
 
       <h3>Members & Student IDs</h3>
       <ul class="nested">
-        <li>John Smith - Student ID: SWH03431</li>
-        <li>Jane Doe - Student ID: SWH</li>
-        <li>Alex Lee - Student ID: SWH</li>
+        <li>Nhat Minh Hoang Vo - Student ID: SWH03431</li>
+        <li>Nguyen Minh Quang - Student ID: SWH02960</li>
+        <li>Vu Huu Nhat Minh - Student ID: SWH</li>
       </ul>
 
       <h3>Tutor</h3>
@@ -36,7 +36,7 @@ include_once 'header.inc';
 
       <h3>Member contributions</h3>
       <dl class="list"> 
-        <dt>- John Smith</dt>
+        <dt>- Hoang Vo</dt>
         <dd>Site design, privacy.php, about.php, styles.css</dd>
         <dt>- Jane Doe</dt>
         <dd>apply.php, jobs.php, form validation</dd>
@@ -53,8 +53,8 @@ include_once 'header.inc';
           <tr><th>Member</th><th>Primary Skill</th><th>Other Interests</th></tr>
         </thead>
         <tbody>
-          <tr><td>John Smith</td><td>Networking</td><td>Security, AI</td></tr>
-          <tr><td>Jane Doe</td><td>Front-end</td><td>Design</td></tr>
+          <tr><td>Hoang Vo</td><td>Networking</td><td>Security, AI</td></tr>
+          <tr><td>Quang Nguyen</td><td>Front-end</td><td>Design</td></tr>
           <tr><td>Alex Lee</td><td>DevOps</td><td>Cloud</td></tr>
         </tbody>
       </table>
