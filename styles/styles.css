@@ -306,60 +306,99 @@ textarea:focus {
 }
 
 /* ==== Manage ==== */
-.manager-actions {
+/* ==== Manage Forms (HR Manager Portal) ==== */
+
+/* Outer container */
+#manage-forms {
   padding: 15px 0;
-  border-top: 1px solid #ccc;
   margin-top: 20px;
+  border-top: 1px solid #ccc;
 }
 
-/* Style for individual management forms (search, delete, update) */
-.manager-actions form {
+/* Each form block (search, delete, update) */
+#manage-forms form {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   align-items: center;
   padding: 15px;
   margin-bottom: 20px;
+  background: #f7f7f7;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background-color: #f7f7f7;
 }
 
-.manager-actions form label {
+/* Labels */
+#manage-forms form label {
   font-weight: 600;
+  color: #1f2937;
   white-space: nowrap;
 }
 
-.manager-actions form input[type="text"],
-.manager-actions form select {
+/* Text inputs + select */
+#manage-forms form input[type="text"],
+#manage-forms form select {
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Specific styling for the destructive Delete button */
-.manager-actions button[value="delete_ref"] {
-  background-color: #ef4444; /* Red */
+#manage-forms form input[type="text"]:focus,
+#manage-forms form select:focus {
+  border-color: #0078d4;
+  box-shadow: 0 0 0 3px rgba(0,120,212,0.2);
+  outline: none;
 }
 
-/* Button for Logout and Update */
-.manager-actions button,
-.login-form-container button {
-  background-color: #0078d4; /* Blue */
+/* Buttons */
+#manage-forms form button {
+  background-color: #0078d4;
   color: white;
   border: none;
   padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: bold;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
 }
 
-.manager-actions button:hover,
-.login-form-container button:hover {
+#manage-forms form button:hover {
   background-color: #005a9e;
+  transform: translateY(-2px);
 }
 
+/* Red destructive button (Delete) */
+#manage-forms form button[value="delete_ref"] {
+  background-color: #ef4444;
+}
+
+#manage-forms form button[value="delete_ref"]:hover {
+  background-color: #c81e1e;
+}
+
+/* List All EOIs button form layout fix */
+#manage-forms form.eoi-table {
+  justify-content: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  #manage-forms form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #manage-forms form button {
+    width: 100%;
+  }
+
+  #manage-forms form input,
+  #manage-forms form select {
+    width: 100%;
+  }
+}
 
 /* --- EOI DATA TABLE STYLING --- */
 .eoi-table {
@@ -536,4 +575,61 @@ body {
     background: #273449;
     border-color: #60a5fa;
   }
+ 
+
+  #manage-forms {
+    border-top-color: #374151;
+  }
+
+
+  #manage-forms form {
+    background-color: #1f2937;   
+    border: 1px solid #374151;  
+    color: #e5e7eb;
+  }
+
+  /* Labels */
+  #manage-forms form label {
+    color: #e5e7eb;         
+  }
+
+  /* Inputs + selects */
+  #manage-forms form input[type="text"],
+  #manage-forms form select {
+    background-color: #374151;   
+    border: 1px solid #4b5563;  
+    color: #f1f5f9;
+  }
+
+  #manage-forms form input[type="text"]:focus,
+  #manage-forms form select:focus {
+    border-color: #60a5fa;     
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.25);
+  }
+
+  
+  #manage-forms form button {
+    background-color: #1e3a8a;  
+    color: white;
+  }
+
+  #manage-forms form button:hover {
+    background-color: #1d4ed8;  
+  }
+
+  
+  #manage-forms form button[value="delete_ref"] {
+    background-color: #b91c1c;  
+  }
+
+  #manage-forms form button[value="delete_ref"]:hover {
+    background-color: #dc2626;  
+  }
+
+
+  #manage-forms form.eoi-table {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
 }
+
