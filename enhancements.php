@@ -8,7 +8,7 @@ include_once 'header.inc';
     <section>
       <h3>Enhancement 1: Dynamic EOI Table Sorting</h3>
       <p>
-        The <code>manage.php</code> page was enhanced to allow the HR manager to **sort** the displayed EOI records
+        The <code>manage.php</code> page was enhanced to allow the HR manager to sort the displayed EOI records
         by Applicant Last Name and EOI Number in ascending or descending order by clicking on column headers.
       </p>
       <h4>Implementation Details:</h4>
