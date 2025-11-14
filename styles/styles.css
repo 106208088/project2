@@ -306,16 +306,13 @@ textarea:focus {
 }
 
 /* ==== Manage ==== */
-/* ==== Manage Forms (HR Manager Portal) ==== */
 
-/* Outer container */
 #manage-forms {
   padding: 15px 0;
   margin-top: 20px;
   border-top: 1px solid #ccc;
 }
 
-/* Each form block (search, delete, update) */
 #manage-forms form {
   display: flex;
   flex-wrap: wrap;
@@ -328,14 +325,12 @@ textarea:focus {
   border-radius: 8px;
 }
 
-/* Labels */
 #manage-forms form label {
   font-weight: 600;
   color: #1f2937;
   white-space: nowrap;
 }
 
-/* Text inputs + select */
 #manage-forms form input[type="text"],
 #manage-forms form select {
   padding: 8px;
@@ -352,7 +347,6 @@ textarea:focus {
   outline: none;
 }
 
-/* Buttons */
 #manage-forms form button {
   background-color: #0078d4;
   color: white;
@@ -369,7 +363,6 @@ textarea:focus {
   transform: translateY(-2px);
 }
 
-/* Red destructive button (Delete) */
 #manage-forms form button[value="delete_ref"] {
   background-color: #ef4444;
 }
@@ -378,12 +371,10 @@ textarea:focus {
   background-color: #c81e1e;
 }
 
-/* List All EOIs button form layout fix */
 #manage-forms form.eoi-table {
   justify-content: flex-start;
 }
 
-/* Responsive */
 @media (max-width: 700px) {
   #manage-forms form {
     flex-direction: column;
@@ -416,10 +407,10 @@ textarea:focus {
 }
 
 .eoi-table th {
-  background-color: #e6f4ff; /* Light blue header */
+  background-color: #e6f4ff; 
   font-weight: bold;
   color: #1f2937;
-  cursor: pointer; /* Implies sorting functionality (Enhancement) */
+  cursor: pointer; 
 }
 .eoi-table tr:nth-child(even) {
   background-color: #f9f9f9;
@@ -427,15 +418,15 @@ textarea:focus {
 
 /* --- EOI STATUS HIGHLIGHTS --- */
 .status-New { 
-  color: #f59e0b; /* Amber/Orange */ 
+  color: #f59e0b; 
   font-weight: bold; 
 }
 .status-Current { 
-  color: #10b981; /* Green */ 
+  color: #10b981; 
   font-weight: bold; 
 }
 .status-Final { 
-  color: #ef4444; /* Red */ 
+  color: #ef4444; 
   font-weight: bold; 
 }
 @media (max-width: 800px) {
