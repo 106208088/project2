@@ -308,29 +308,35 @@ textarea:focus {
 /* ==== Manage ==== */
 
 
-#manage-forms form {
+.manage-forms form {
   display: flex;
   flex-direction: row;
   gap: 10px;
   align-items: center;
   margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
-#manage-forms label {
+
+.manage-forms label {
   font-weight: 600;
   white-space: nowrap;
 }
 
-#manage-forms button {
-  background-color: #0078d4;
-  color: white;
+.manage-forms button {
+  grid-column: 2 / 3;
+  padding: 0.75rem 1.5rem;
   border: none;
-  padding: 8px 15px;
+  background: #0078d4;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 4px;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+@media (max-width: 800px) {
+  .manage-forms { grid-template-columns: 1fr; }
+  .manage-forms button { grid-column: 1 / -1; }
 }
 
 /* Style for the EOI data table */

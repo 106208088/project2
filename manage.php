@@ -13,24 +13,25 @@ include_once 'settings.php';
     <form action="logout.php" method="post" style="text-align: right; margin-bottom: 20px;">
         <button type="submit" style="background-color: #ef4444; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">Log Out</button>
     </form>
+
     <h2>HR Manager Portal</h2>
     <p>This page provides access to Expressions of Interest (EOI) data from applicants.</p>
-
+    <section id="manage-forms">
     <section>
         <h3>Search & Display Expressions of Interest</h3>
-        <form action="manage.php" method="GET">
+        <form action="manage.php" method="GET" class="search-form">
             <label for="search_ref">Search by Job Reference Number:</label>
             <input type="text" id="search_ref" name="job_ref" maxlength="5">
             <button type="submit">Search by Ref</button>
         </form>
 
-        <form action="manage.php" method="GET">
+        <form action="manage.php" method="GET" class="search-form-2">
             <label for="search_name">Search by Applicant Name (First or Last):</label>
             <input type="text" id="search_name" name="applicant_name" maxlength="40">
             <button type="submit">Search by Name</button>
         </form>
 
-        <form action="manage.php" method="GET">
+        <form action="manage.php" method="GET" class="eoi-table">
              <input type="hidden" name="action" value="list_all">
              <button type="submit">List All EOIs</button>
         </form>
@@ -42,7 +43,7 @@ include_once 'settings.php';
     <section>
         <h3>Delete EOI Records</h3>
         <p>This action will permanently **delete all** Expressions of Interest for the specified job reference number.</p>
-        <form action="manage.php" method="POST">
+        <form action="manage.php" method="POST" class="delete-form">
             <label for="delete_ref">Job Reference to Delete ALL records:</label>
             <input type="text" id="delete_ref" name="delete_job_ref" maxlength="5" required>
             <button type="submit" name="action" value="delete_ref">Delete All Matching EOIs</button>
@@ -67,6 +68,7 @@ include_once 'settings.php';
             <button type="submit" name="action" value="update_status">Update Status</button>
         </form>
     </section>
+</section>
 
 <?php
 include_once 'footer.inc';
