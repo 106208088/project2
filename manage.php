@@ -123,7 +123,7 @@ if ($stmt = $conn->prepare($query)) {
     <h2>HR Manager Portal</h2>
 
     <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <p>Welcome, **<?php echo htmlspecialchars($_SESSION['manager_user']); ?>**.</p>
+        <p>Welcome, <?php echo htmlspecialchars($_SESSION['manager_user']); ?>.</p>
         <form action="logout.php" method="post">
             <button type="submit" class="logout-button">Log Out</button>
         </form>
