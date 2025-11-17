@@ -27,8 +27,8 @@ include_once 'header.inc';
       <h3>Members & Student IDs</h3>
       <ul class="nested">
         <li>Nhat Minh Hoang Vo - Student ID: SWH03431</li>
-        <li>Nguyen Minh Quang - Student ID: SWH02960</li>
-        <li>Vu Huu Nhat Minh - Student ID: SWH03022</li>
+        <li>Quang Minh Nguyen - Student ID: SWH02960</li>
+        <li>Huu Nhat Minh Vu - Student ID: SWH03022</li>
       </ul>
 
       <h3>Tutor</h3>
