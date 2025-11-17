@@ -88,7 +88,7 @@ $where_clauses = [];
 
 if (isset($_GET['job_ref_search']) && !empty($_GET['job_ref_search'])) {
     $ref = sanitise_input($_GET['job_ref_search']);
-    $where_clauses[] = "job_reference = ?";
+    $where_clauses[] = "Job_Reference_Number = ?";
     $params[] = $ref;
     $types .= "s";
 } 
