@@ -314,91 +314,124 @@ textarea:focus {
 
 /* ==== Manage ==== */
 
-#manage-forms {
-  padding: 15px 0;
-  margin-top: 20px;
-  border-top: 1px solid #ccc;
+/* ==== Manage.php Styling (Matches styles.css theme) ==== */
+
+/* Section container */
+.manager-actions {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f8fbff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
-#manage-forms form {
+/* Section headers */
+.manager-actions h3 {
+  color: #005fa3;
+  margin-bottom: 15px;
+}
+
+/* Search forms */
+.search-form,
+.delete-form {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   align-items: center;
+  margin-bottom: 15px;
   padding: 15px;
-  margin-bottom: 20px;
-  background: #f7f7f7;
-  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
   border-radius: 8px;
 }
 
-#manage-forms form label {
+/* Labels */
+.search-form label,
+.delete-form label {
   font-weight: 600;
   color: #1f2937;
   white-space: nowrap;
 }
 
-#manage-forms form input[type="text"],
-#manage-forms form select {
-  padding: 8px;
+/* Inputs */
+.search-form input[type="text"],
+.delete-form input[type="text"],
+.search-form select {
+  padding: 0.6rem;
   border: 1px solid #cbd5e1;
   border-radius: 6px;
-  background: #ffffff;
+  width: 220px;
+  background: #f9fafb;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-#manage-forms form input[type="text"]:focus,
-#manage-forms form select:focus {
+/* Focus effect */
+.search-form input:focus,
+.delete-form input:focus,
+.search-form select:focus {
   border-color: #0078d4;
-  box-shadow: 0 0 0 3px rgba(0,120,212,0.2);
+  box-shadow: 0 0 0 3px rgba(0,120,212,0.25);
   outline: none;
 }
 
-#manage-forms form button {
-  background-color: #0078d4;
+/* Buttons */
+.search-form button,
+.delete-form button,
+.logout-button {
+  background: #0078d4;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
 }
 
-#manage-forms form button:hover {
-  background-color: #005a9e;
+.search-form button:hover,
+.delete-form button:hover,
+.logout-button:hover {
+  background: #005fa3;
   transform: translateY(-2px);
 }
 
-#manage-forms form button[value="delete_ref"] {
-  background-color: #ef4444;
+/* Delete button special styling */
+.delete-form button {
+  background: #d62828;
 }
 
-#manage-forms form button[value="delete_ref"]:hover {
-  background-color: #c81e1e;
+.delete-form button:hover {
+  background: #b42020;
 }
 
-#manage-forms form.eoi-table {
-  justify-content: flex-start;
+/* EOI table spacing fix for manage page */
+.eoi-table {
+  margin-top: 25px;
 }
 
+/* Status colours (you already have) */
+.status-New { color: #f59e0b; font-weight: bold; }
+.status-Current { color: #10b981; font-weight: bold; }
+.status-Final { color: #ef4444; font-weight: bold; }
+
+/* Responsive */
 @media (max-width: 700px) {
-  #manage-forms form {
+  .search-form,
+  .delete-form {
     flex-direction: column;
     align-items: stretch;
   }
-
-  #manage-forms form button {
-    width: 100%;
-  }
-
-  #manage-forms form input,
-  #manage-forms form select {
+  
+  .search-form input,
+  .delete-form input,
+  .search-form button,
+  .delete-form button {
     width: 100%;
   }
 }
 
-/* --- EOI DATA TABLE STYLING --- */
+
 .eoi-table {
   width: 100%;
   border-collapse: collapse;
@@ -575,59 +608,42 @@ body {
   }
  
 
-  #manage-forms {
-    border-top-color: #374151;
+ .manager-actions {
+    background: #1e293b;
+    border-color: #374151;
   }
 
-
-  #manage-forms form {
-    background-color: #1f2937;   
-    border: 1px solid #374151;  
+  .search-form,
+  .delete-form {
+    background: #111827;
+    border-color: #374151;
     color: #e5e7eb;
   }
 
-  /* Labels */
-  #manage-forms form label {
-    color: #e5e7eb;         
+  .search-form label,
+  .delete-form label {
+    color: #e5e7eb;
   }
 
-  /* Inputs + selects */
-  #manage-forms form input[type="text"],
-  #manage-forms form select {
-    background-color: #374151;   
-    border: 1px solid #4b5563;  
-    color: #f1f5f9;
+  .search-form input,
+  .search-form select,
+  .delete-form input {
+    background: #1f2937;
+    border-color: #4b5563;
+    color: #e5e7eb;
   }
 
-  #manage-forms form input[type="text"]:focus,
-  #manage-forms form select:focus {
-    border-color: #60a5fa;     
+  .search-form input:focus,
+  .delete-form input:focus,
+  .search-form select:focus {
+    border-color: #60a5fa;
     box-shadow: 0 0 0 3px rgba(96,165,250,0.25);
   }
 
-  
-  #manage-forms form button {
-    background-color: #1e3a8a;  
-    color: white;
+  .delete-form button {
+    background: #b91c1c;
   }
-
-  #manage-forms form button:hover {
-    background-color: #1d4ed8;  
-  }
-
-  
-  #manage-forms form button[value="delete_ref"] {
-    background-color: #b91c1c;  
-  }
-
-  #manage-forms form button[value="delete_ref"]:hover {
-    background-color: #dc2626;  
-  }
-
-
-  #manage-forms form.eoi-table {
-    background-color: #1f2937;
-    border-color: #374151;
+  .delete-form button:hover {
+    background: #dc2626;
   }
 }
-
