@@ -314,9 +314,6 @@ textarea:focus {
 
 /* ==== Manage ==== */
 
-/* ==== Manage.php Styling (Matches styles.css theme) ==== */
-
-/* Section container */
 .manager-actions {
   margin-top: 25px;
   padding: 20px;
@@ -326,13 +323,11 @@ textarea:focus {
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
-/* Section headers */
 .manager-actions h3 {
   color: #005fa3;
   margin-bottom: 15px;
 }
 
-/* Search forms */
 .search-form,
 .delete-form {
   display: flex;
@@ -346,7 +341,6 @@ textarea:focus {
   border-radius: 8px;
 }
 
-/* Labels */
 .search-form label,
 .delete-form label {
   font-weight: 600;
@@ -354,7 +348,6 @@ textarea:focus {
   white-space: nowrap;
 }
 
-/* Inputs */
 .search-form input[type="text"],
 .delete-form input[type="text"],
 .search-form select {
@@ -366,7 +359,6 @@ textarea:focus {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Focus effect */
 .search-form input:focus,
 .delete-form input:focus,
 .search-form select:focus {
@@ -375,7 +367,6 @@ textarea:focus {
   outline: none;
 }
 
-/* Buttons */
 .search-form button,
 .delete-form button,
 .logout-button {
@@ -396,7 +387,6 @@ textarea:focus {
   transform: translateY(-2px);
 }
 
-/* Delete button special styling */
 .delete-form button {
   background: #d62828;
 }
@@ -405,17 +395,14 @@ textarea:focus {
   background: #b42020;
 }
 
-/* EOI table spacing fix for manage page */
 .eoi-table {
   margin-top: 25px;
 }
 
-/* Status colours (you already have) */
 .status-New { color: #f59e0b; font-weight: bold; }
 .status-Current { color: #10b981; font-weight: bold; }
 .status-Final { color: #ef4444; font-weight: bold; }
 
-/* Responsive */
 @media (max-width: 700px) {
   .search-form,
   .delete-form {
@@ -431,7 +418,6 @@ textarea:focus {
   }
 }
 
-
 .eoi-table {
   width: 100%;
   border-collapse: collapse;
@@ -441,61 +427,58 @@ textarea:focus {
 
 .eoi-table th, .eoi-table td {
   padding: 12px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #709bff;
   text-align: left;
   font-size: 0.9rem;
 }
 
 .eoi-table th {
-  background-color: #e6f4ff; 
+  background-color: #709bff; 
   font-weight: bold;
   color: #1f2937;
   cursor: pointer; 
 }
-.eoi-table tr:nth-child(even) {
-  background-color: #f9f9f9;
+.eoi-table td form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* --- EOI STATUS HIGHLIGHTS --- */
-.status-New { 
-  color: #f59e0b; 
-  font-weight: bold; 
+.eoi-table td form select {
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
-.status-Current { 
-  color: #10b981; 
-  font-weight: bold; 
+
+.eoi-table td form select:focus {
+  border-color: #0078d4;
+  box-shadow: 0 0 0 3px rgba(0,120,212,0.25);
+  outline: none;
 }
-.status-Final { 
-  color: #ef4444; 
-  font-weight: bold; 
+
+.eoi-table td form button {
+  padding: 6px 10px;
+  background: #0078d4;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
 }
+
+.eoi-table td form button:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
+}
+
+
 @media (max-width: 800px) {
   .manage-forms { grid-template-columns: 1fr; }
   .manage-forms button { grid-column: 1 / -1; }
-}
-
-/* Style for the EOI data table */
-.eoi-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.eoi-table th, .eoi-table td {
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  text-align: left;
-  font-size: 0.9rem;
-}
-
-.eoi-table th {
-  background-color: #f1f1f1;
-  font-weight: bold;
-  color: #333;
-}
-.eoi-table tr:nth-child(even) {
-  background-color: #f9f9f9;
 }
 
 .status-New { color: #f59e0b; font-weight: bold; } 
@@ -645,5 +628,18 @@ body {
   }
   .delete-form button:hover {
     background: #dc2626;
+  }
+   .eoi-table td form select {
+    background: #1f2937;
+    border-color: #4b5563;
+    color: #e5e7eb;
+  }
+
+  .eoi-table td form button {
+    background: #1e3a8a;
+  }
+
+  .eoi-table td form button:hover {
+    background: #1d4ed8;
   }
 }

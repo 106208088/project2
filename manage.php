@@ -1,18 +1,14 @@
 <?php
-// CRITICAL: session_start() MUST be the very first line for login/session management
 session_start(); 
 
-// --- Configuration and Utilities ---
-require_once 'settings.php'; // Includes $host, $user, $password, $database
+require_once 'settings.php'; 
 include_once 'header.inc';
 
 $pageTitle = "SWC IT - HR Manager Interface";
-$feedback = ""; // Variable to store success/error messages
+$feedback = "";
 
-// Define possible EOI statuses for the update functionality
 $EOI_STATUSES = ['New', 'Current', 'Final']; 
 
-// Helper function for sanitizing user input (used for search terms)
 function sanitise_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -20,23 +16,16 @@ function sanitise_input($data) {
     return $data;
 }
 
-// --------------------------------------------------------------------------------
-// 1. ACCESS CONTROL CHECK (Enhancement A.8.3)
-// --------------------------------------------------------------------------------
 if (!isset($_SESSION['manager_logged_in']) || $_SESSION['manager_logged_in'] !== true) {
-    // If not logged in, redirect to the login page
+
     header("Location: manager_login.php");
     exit();
 }
 
-// --------------------------------------------------------------------------------
-// 2. DATABASE CONNECTION
-// --------------------------------------------------------------------------------
 $conn = @new mysqli($host, $user, $pwd, $sql_db);
 
 if ($conn->connect_error) {
     $feedback = "FATAL ERROR: Database connection failed. Cannot manage records. " . $conn->connect_error;
-    // Display error and exit, preventing further execution
     echo "<h2 style='color:red;'>Database Connection Error</h2>";
     echo "<p style='color:red;'>" . $feedback . "</p>";
     include_once 'footer.inc';
@@ -44,13 +33,8 @@ if ($conn->connect_error) {
 }
 
 
-// --------------------------------------------------------------------------------
-// 3. ACTION HANDLERS (POST Requests: Update & Delete)
-// --------------------------------------------------------------------------------
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // --- Delete EOI by Reference (A.5.4) ---
     if (isset($_POST['action']) && $_POST['action'] == 'delete_ref') {
         $ref_to_delete = sanitise_input($_POST['delete_job_ref']);
         
@@ -70,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } 
     
-    // --- Update EOI Status (A.5.5) ---
     else if (isset($_POST['action']) && $_POST['action'] == 'update_status') {
         $eoi_to_update = sanitise_input($_POST['eoi_number']);
         $new_status = sanitise_input($_POST['new_status']);
@@ -96,37 +79,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-// --------------------------------------------------------------------------------
-// 4. EOI RETRIEVAL LOGIC (GET Requests: Search/Filter)
-// --------------------------------------------------------------------------------
 
 $query = "SELECT * FROM eoi";
 $params = [];
 $types = "";
 $where_clauses = [];
 
-// --- Search by Job Reference (A.5.2) ---
+
 if (isset($_GET['job_ref_search']) && !empty($_GET['job_ref_search'])) {
     $ref = sanitise_input($_GET['job_ref_search']);
     $where_clauses[] = "job_reference = ?";
     $params[] = $ref;
     $types .= "s";
 } 
-// --- Search by Name (A.5.3) ---
+
 else if (isset($_GET['name_search']) && !empty($_GET['name_search'])) {
     $name = "%" . sanitise_input($_GET['name_search']) . "%";
-    $where_clauses[] = "(first_name LIKE ? OR family_name LIKE ?)";
+    $where_clauses[] = "(First_name LIKE ? OR Last_name LIKE ?)";
     $params[] = $name;
     $params[] = $name;
     $types .= "ss";
 }
 
-// Append WHERE clauses if any filters are active
 if (!empty($where_clauses)) {
     $query .= " WHERE " . implode(" AND ", $where_clauses);
 }
 
-// Add default ordering (e.g., by EOI number descending)
 $query .= " ORDER BY EOInumber DESC";
 
 $eoitable = null;
@@ -152,7 +130,7 @@ if ($stmt = $conn->prepare($query)) {
     </div>
 
     <?php 
-    // Display feedback from actions (Update/Delete)
+
     if (!empty($feedback)) {
         echo "<p style='padding: 10px; border: 1px solid; border-radius: 5px; margin-bottom: 20px;'>" . $feedback . "</p>";
     }
@@ -165,7 +143,7 @@ if ($stmt = $conn->prepare($query)) {
             <label for="job_ref_search">Search by Job Ref:</label>
             <input type="text" id="job_ref_search" name="job_ref_search" pattern="[A-Za-z0-9]{5}" placeholder="e.g., NA12B">
             <button type="submit">Search</button>
-            <a href="manage.php" class="button" style="text-decoration: none; padding: 10px 15px; background-color: #f1f1f1; color: #333; border-radius: 4px;">View All (A.5.1)</a>
+            <a href="manage.php" class="button" style="text-decoration: none; padding: 10px 15px; background-color: #f1f1f1; color: #333; border-radius: 4px;">View All</a>
         </form>
         
         <form action="manage.php" method="GET" class="search-form">
