@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $ref_to_delete = sanitise_input($_POST['delete_job_ref']);
         
         if (!empty($ref_to_delete)) {
-            $stmt = $conn->prepare("DELETE FROM eoi WHERE job_reference = ?");
+            $stmt = $conn->prepare("DELETE FROM eoi WHERE Job_Reference_Number = ?");
             $stmt->bind_param("s", $ref_to_delete);
             
             if ($stmt->execute()) {
@@ -219,7 +219,7 @@ if ($stmt = $conn->prepare($query)) {
 </main>
 
 <?php
-// Close the database connection
+
 if (isset($conn)) {
     $conn->close();
 }
