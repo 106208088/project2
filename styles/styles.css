@@ -507,21 +507,18 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Success Message */
 h2:contains("Successful") {
     color: #10b981; 
     border-bottom: 2px solid #10b981;
     padding-bottom: 5px;
 }
 
-/* Error Message */
 h2:contains("Failed") {
     color: #ef4444; 
     border-bottom: 2px solid #ef4444;
     padding-bottom: 5px;
 }
 
-/* Styling for the unique EOI number */
 h3 strong {
     color: #0078d4; 
     font-size: 1.5rem;
