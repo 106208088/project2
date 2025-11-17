@@ -18,7 +18,7 @@ function sanitise_input($data) {
 
 if (!isset($_SESSION['manager_logged_in']) || $_SESSION['manager_logged_in'] !== true) {
 
-    header("Location: manager_login.php");
+    header("Location:login.php");
     exit();
 }
 
@@ -124,7 +124,7 @@ if ($stmt = $conn->prepare($query)) {
 
     <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
         <p>Welcome, **<?php echo htmlspecialchars($_SESSION['manager_user']); ?>**.</p>
-        <form action="manager_logout.php" method="post">
+        <form action="logout.php" method="post">
             <button type="submit" class="logout-button">Log Out</button>
         </form>
     </div>
